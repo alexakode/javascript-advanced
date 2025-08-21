@@ -19,3 +19,15 @@ const newToys = ["car", "plane", "boat"];
 // merge two arrays using spread operator
 myToyBox = [...myToyBox, ...newToys];
 console.log(myToyBox);
+
+function calculate(a, b) {
+  console.log(a + b);
+}
+calculate(5, 10);
+
+function calculateV2(...numbers) {
+  for (const num of numbers) {
+    console.log(num);
+  }
+}
+calculateV2(1, 2);

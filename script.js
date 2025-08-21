@@ -1,5 +1,5 @@
-const toyBox = ["teddy", "dinosaur", "robot"];
-const [a, b, c] = toyBox;
+let toyBox = ["teddy", "dinosaur", "robot"];
+let [a, b, c] = toyBox;
 const [firstToy, secondToy, thirdToy] = toyBox;
 // elements can be empty, [firstToy, , thirdToy] is also valid
 console.log("First toy: " + a, "Second toy: " + b, "Third toy: " + c);
@@ -52,3 +52,37 @@ const toyElements = toyBox.map((toy) => {
 });
 console.log(toyElements);
 container.append(...toyElements);
+
+let person = {
+  name: "Alex",
+  age: 25,
+};
+person.city = "Oslo";
+person = { ...person, city: "Oslo" };
+let { age, ...allOtherProperties } = person;
+console.log(person);
+console.log(person.name);
+// . can be used to call properties from large databases
+console.log(person.age);
+console.log(age);
+console.log(allOtherProperties);
+
+let names = [];
+let [d = "Guest"] = names;
+console.log(d);
+
+const participants = [
+  { name: "Alice", age: 30, city: "Oslo" },
+  { name: "Bob", age: 25, city: "Bergen" },
+  { name: "Charlie", age: 35, city: "Stavanger" },
+];
+const [winner, secondPlace, thirdPlace] = participants;
+// function takes an object as an argument
+function destructureName(personObject) {
+  const { name } = personObject;
+  return name;
+}
+console.log(destructureName(winner));
+console.log(destructureName(secondPlace));
+console.log(destructureName(thirdPlace));
+// console.log(thirdPlace.name);

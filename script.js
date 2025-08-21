@@ -31,3 +31,24 @@ function calculateV2(...numbers) {
   }
 }
 calculateV2(1, 2);
+
+const container = document.getElementById("main-container");
+function createButton(text) {
+  const buttonElement = document.createElement("button");
+  buttonElement.textContent = text;
+  return buttonElement;
+}
+// const button1 = createButton("!");
+// const button2 = createButton("?");
+// container.append(button1, button2);
+// container.append(createButton("!"), createButton("?"));
+function createButton(text) {
+  const buttonElement = document.createElement("button");
+  buttonElement.textContent = text;
+  return buttonElement;
+}
+const toyElements = toyBox.map((toy) => {
+  return createButton(toy);
+});
+console.log(toyElements);
+container.append(...toyElements);

@@ -37,3 +37,18 @@ const getFact = async (limit, max_length) => {
   return data;
 };
 getFact(5, 100).then((data) => console.log(data));
+
+/* codes
+Ok  200
+Created  201  ok, new resource
+Accepted  202
+No Content  204
+Bad Request  400  you have not provided everything requred
+Unauthorized  401 I do not know whether you have permission
+Forbidden  403  you do not have access to this resource
+Not Found  404  no I can't find that
+Method Not Allowed  405
+Conflict  409
+Internal Server Error  500 the server does not know what to do
+Service Unavailable  503
+*/ 
